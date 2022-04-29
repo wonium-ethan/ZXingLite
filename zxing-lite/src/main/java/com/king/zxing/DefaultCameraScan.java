@@ -157,23 +157,21 @@ public class DefaultCameraScan extends CameraScan {
 
         mBeepManager = new BeepManager(mContext);
         mAmbientLightManager = new AmbientLightManager(mContext);
-        if(mAmbientLightManager != null){
-            mAmbientLightManager.register();
-            mAmbientLightManager.setOnLightSensorEventListener((dark, lightLux) -> {
-                if(flashlightView != null){
-                    if(dark){
-                        if(flashlightView.getVisibility() != View.VISIBLE){
-                            flashlightView.setVisibility(View.VISIBLE);
-                            flashlightView.setSelected(isTorchEnabled());
-                        }
-                    }else if(flashlightView.getVisibility() == View.VISIBLE && !isTorchEnabled()){
-                        flashlightView.setVisibility(View.INVISIBLE);
-                        flashlightView.setSelected(false);
-                    }
-
-                }
-            });
-        }
+        mAmbientLightManager.register();
+        mAmbientLightManager.setOnLightSensorEventListener((dark, lightLux) -> {
+//            if(flashlightView != null){
+//                if(dark){
+//                    if(flashlightView.getVisibility() != View.VISIBLE){
+//                        flashlightView.setVisibility(View.VISIBLE);
+//                        flashlightView.setSelected(isTorchEnabled());
+//                    }
+//                }else if(flashlightView.getVisibility() == View.VISIBLE && !isTorchEnabled()){
+//                    flashlightView.setVisibility(View.INVISIBLE);
+//                    flashlightView.setSelected(false);
+//                }
+//
+//            }
+        });
     }
 
     private void handlePreviewViewClickTap(MotionEvent event){
